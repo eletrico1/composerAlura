@@ -1,0 +1,40 @@
+
+{
+    "name": "allantoonn/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Allan Barreto",
+            "email": "allanfernandesti@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/dom-crawler": "^4.4",
+        "guzzlehttp/guzzle": "^6.5",
+        "symfony/css-selector": "^4.4",
+        "fortawesome/font-awesome": "6.4.0",
+        "phpunit/phpunit": "7.5.1",
+        "squizlabs/php_codesniffer": "*",
+        "phan/phan": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alura\\BuscadorDeCursos\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit src\\Buscar.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "ls": "dir",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificações do código, PHAN, PHPCS E PHPUNIT"
+    }
+}
